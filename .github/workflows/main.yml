@@ -21,7 +21,7 @@ jobs:
           path: lib/function.txt
       - name: Sending Function to Segment
         uses: ./ # Uses an action in the root directory
-        id: get_functions
+        id: Get_Functions
           token: 'Mona the Octocat'
           function-js: function/function.txt
       # Use the output from the `hello` step
