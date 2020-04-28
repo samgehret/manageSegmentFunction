@@ -5,6 +5,7 @@ const axios = require('axios')
 try {
     // `who-to-greet` input defined in action metadata file
     const nameToGreet = core.getInput('token');
+    const functionCode = core.getInput('function-js')
     console.log(`Hello ${nameToGreet}!`);
     const time = (new Date()).toTimeString();
     core.setOutput("time", time);
@@ -14,8 +15,8 @@ try {
     const bodyParams = {
             type: 'DESTINATION',
             function: {
-            display_name: "Test API6",
-            code: "console.log('test')",
+            display_name: "Test API7",
+            code: functionCode,
             buildpack: "boreal"
             }
     }
