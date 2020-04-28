@@ -14,32 +14,41 @@ jobs:
           cp lib/function.js lib/function.txt
           value=`cat lib/function.txt`
           echo $value
+      - name: Hello world action step
+        uses: ./ # Uses an action in the root directory
+        id: Get_Functions
+        with:
+          token: 'Mona the Octocat'
+          function-js: lib/function.txt
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The meow meow new2 time was ${{ steps.hello.outputs.time }}"
       - name: Archive production artifacts
         uses: actions/upload-artifact@v1
         with:
           name: function
           path: lib/function.txt
 
-  job_2:
-    name: Download and log
-    needs: job_1
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download function from step 1
-        uses: actions/download-artifact@v1
-        with:
-          name: function
-      - shell: bash
-        run: |
-          echo "hello world2"
-          value2=`cat function/function.txt`
-          echo $value2
-      - name: Hello world action step
-        uses: ./ # Uses an action in the root directory
-        id: Get_Functions
-        with:
-          token: 'Mona the Octocat'
-          function-js: function/function.txt
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The meow meow new2 time was ${{ steps.hello.outputs.time }}"
+  # job_2:
+  #   name: Download and log
+  #   needs: job_1
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Download function from step 1
+  #       uses: actions/download-artifact@v1
+  #       with:
+  #         name: function
+  #     - shell: bash
+  #       run: |
+  #         echo "hello world2"
+  #         value2=`cat function/function.txt`
+  #         echo $value2
+  #     - name: Hello world action step
+  #       uses: ./ # Uses an action in the root directory
+  #       id: Get_Functions
+  #       with:
+  #         token: 'Mona the Octocat'
+  #         function-js: function/function.txt
+  #     # Use the output from the `hello` step
+  #     - name: Get the output time
+  #       run: echo "The meow meow new2 time was ${{ steps.hello.outputs.time }}"
