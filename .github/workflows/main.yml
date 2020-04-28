@@ -14,30 +14,26 @@ jobs:
           cp lib/function.js lib/function.txt
           value=`cat lib/function.txt`
           echo $value
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: function
+          path: lib/function.txt
 
-
-
-
-      # - name: Archive production artifacts
-      #   uses: actions/upload-artifact@v1
-      #   with:
-      #     name: function
-      #     path: lib/function.js
-
-  # job_2:
-  #   name: Download and log
-  #   needs: job_1
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Download function from step 1
-  #       uses: actions/download-artifact@v1
-  #       with:
-  #         name: function
-  #     - shell: bash
-  #       run: |
-  #         echo "hello world"
-  #         cp function/function.js function/function.txt
-  #         value=`cat function/function.txt`
+  job_2:
+    name: Download and log
+    needs: job_1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download function from step 1
+        uses: actions/download-artifact@v1
+        with:
+          name: function
+      - shell: bash
+        run: |
+          echo "hello world2"
+          value2=`cat function/function.txt`
+          echo $value2
 
 
 
