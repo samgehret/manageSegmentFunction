@@ -14,7 +14,7 @@ try {
 
 axios.get('http://dummy.restapiexample.com/api/v1/employees')
     .then(function(response) {
-        console.log(response)
+        console.log(response.data)
     })
 
 } catch (error) {
