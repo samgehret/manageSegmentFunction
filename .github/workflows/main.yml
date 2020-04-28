@@ -1,18 +1,53 @@
 on: [push]
 
 jobs:
-  hello_world_job:
+  job_1:
     runs-on: ubuntu-latest
     name: A job to say hello
+    runs-on: ubuntu-latest
     steps:
       # To use this repository's private action, you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Hello world action step
-        uses: ./ # Uses an action in the root directory
-        id: hello
-        with:
-          token: 'Mona the Octocat'
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The meow meow new2 time was ${{ steps.hello.outputs.time }}"
+      - shell: bash
+        run: |
+          echo "hello world"
+          cp lib/function.js lib/function.txt
+          value=`cat lib/function.txt`
+          echo $value
+
+
+
+
+      # - name: Archive production artifacts
+      #   uses: actions/upload-artifact@v1
+      #   with:
+      #     name: function
+      #     path: lib/function.js
+
+  # job_2:
+  #   name: Download and log
+  #   needs: job_1
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Download function from step 1
+  #       uses: actions/download-artifact@v1
+  #       with:
+  #         name: function
+  #     - shell: bash
+  #       run: |
+  #         echo "hello world"
+  #         cp function/function.js function/function.txt
+  #         value=`cat function/function.txt`
+
+
+
+
+      # - name: Hello world action step
+      #   uses: ./ # Uses an action in the root directory
+      #   id: Get Functions
+      #   with:
+      #     token: 'Mona the Octocat'
+      # # Use the output from the `hello` step
+      # - name: Get the output time
+      #   run: echo "The meow meow new2 time was ${{ steps.hello.outputs.time }}"
