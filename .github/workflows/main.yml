@@ -2,7 +2,6 @@ on: [push]
 
 jobs:
   job_1:
-    runs-on: ubuntu-latest
     name: A job to say hello
     runs-on: ubuntu-latest
     steps:
