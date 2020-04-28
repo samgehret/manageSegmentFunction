@@ -36,7 +36,7 @@ jobs:
           echo $value2
       - name: Hello world action step
         uses: ./ # Uses an action in the root directory
-        id: Get Functions
+        id: Get_Functions
         with:
           token: 'Mona the Octocat'
           function-js: function/function.txt
