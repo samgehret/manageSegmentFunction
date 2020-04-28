@@ -12,7 +12,7 @@ jobs:
         uses: ./ # Uses an action in the root directory
         id: hello
         with:
-          who-to-greet: 'Mona the Octocat'
+          token: 'Mona the Octocat'
       # Use the output from the `hello` step
       - name: Get the output time
-        run: echo "The meow new time was ${{ steps.hello.outputs.time }}"
+        run: echo "The meow meow new time was ${{ steps.hello.outputs.time }}"
