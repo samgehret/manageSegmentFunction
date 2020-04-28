@@ -24,7 +24,7 @@ jobs:
         id: get_functions
         with:
           token: 'Mona the Octocat'
-          function-js: function/function.txt
+          function-js: {{$value}}
       # Use the output from the `hello` step
 
 
