@@ -12,11 +12,12 @@ try {
     //   const payload = JSON.stringify(github.context.payload, undefined, 2)
     //   console.log(`The event meow payload: ${payload}`);
     const bodyParams = {
-        function: {
-            display_name: "test api 6",
-            code: "{console.log(test)}",
+            type: 'DESTINATION',
+            function: {
+            display_name: "Test API6",
+            code: "console.log('test')",
             buildpack: "boreal"
-        }
+            }
     }
     const config = {
         headers: { Authorization: `Bearer DDeaRf5arluteOr1u9deUu8KcqkcBD621Q1tQb-VX4s.J_QDecOc1ZE7FbCHhoSR2MAvOtPTZRb9uuSR60yZkTU` }
