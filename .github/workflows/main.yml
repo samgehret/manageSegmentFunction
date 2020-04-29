@@ -5,12 +5,11 @@ jobs:
     name: Upload Function to Segment
     runs-on: ubuntu-latest
     steps:
-      # To use this repository's private action, you must check out the repository
-      - name: Checkout Function
+      - name: Checkout and Preparing Function
         uses: actions/checkout@v2
       - shell: bash
         run: |
-          echo "Function Text is"
+          echo "Function Code Is"
           cp lib/function.js lib/function.txt
           value=`cat lib/function.txt`
           echo $value
@@ -21,3 +20,4 @@ jobs:
         with:
           token: 'Mona the Octocat'
           function-js: ${{ steps.checkout.outputs.function_code }}
+          function-name: 'Sam Test Function'

@@ -8,7 +8,11 @@ inputs:
   function-code:  # id of input
     description: 'Function Code'
     required: true
-    default: 'World'
+    default: 'No Code Read'
+  function-name:  # id of input
+    description: 'Function Name'
+    required: true
+    default: 'Default Function Name'
 runs:
   using: 'node12'
   main: 'index.js'
