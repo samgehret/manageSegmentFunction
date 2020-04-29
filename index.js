@@ -20,7 +20,7 @@ try {
             type: 'DESTINATION',
             function: {
             display_name: "Test API11",
-            code: functionCode,
+            code: `'${functionCode}'`,
             buildpack: "boreal"
             }
     }
