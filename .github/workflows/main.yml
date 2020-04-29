@@ -20,4 +20,4 @@ jobs:
         with:
           token: 'Mona the Octocat'
           function-code: ${{ steps.checkout.outputs.function_code }}
-          function-name: 'Sam Test Function'
+          function-name: 'Ricky Test Function'
