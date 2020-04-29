@@ -14,44 +14,10 @@ jobs:
           cp lib/function.js lib/function.txt
           value=`cat lib/function.txt`
           echo $value
-          echo "::set-output name=action_fruit::$value"
+          echo "::set-output name=function_code::$value"
         id: checkout
-      # - name: Archive Function Code
-      #   uses: actions/upload-artifact@v1
-      #   with:
-      #     name: function
-      #     path: lib/function.txt
-      # test
-      - name: Get the output time
-        run: echo "The meow meow new2 time was ${{ steps.checkout.outputs.action_fruit }}"
       - name: Sending Function to Segment
         uses: ./ # Uses an action in the root directory
         with:
           token: 'Mona the Octocat'
-          function-js: ${{ steps.checkout.outputs.action_fruit }}
-      # Use the output from the `hello` step
-
-
-  # job_2:
-  #   name: Download and log
-  #   needs: job_1
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Download function from step 1
-  #       uses: actions/download-artifact@v1
-  #       with:
-  #         name: function
-  #     - shell: bash
-  #       run: |
-  #         echo "hello world2"
-  #         value2=`cat function/function.txt`
-  #         echo $value2
-  #     - name: Hello world action step
-  #       uses: ./ # Uses an action in the root directory
-  #       id: Get_Functions
-  #       with:
-  #         token: 'Mona the Octocat'
-  #         function-js: function/function.txt
-  #     # Use the output from the `hello` step
-  #     - name: Get the output time
-  #       run: echo "The meow meow new2 time was ${{ steps.hello.outputs.time }}"
+          function-js: ${{ steps.checkout.outputs.function_code }}
