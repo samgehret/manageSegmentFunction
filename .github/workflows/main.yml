@@ -19,5 +19,5 @@ jobs:
         uses: ./ # Uses an action in the root directory
         with:
           token: 'Mona the Octocat'
-          function-js: ${{ steps.checkout.outputs.function_code }}
+          function-code: ${{ steps.checkout.outputs.function_code }}
           function-name: 'Sam Test Function'
