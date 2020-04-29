@@ -19,7 +19,7 @@ try {
     const bodyParams = {
             type: 'DESTINATION',
             function: {
-            display_name: "Test API9",
+            display_name: "Test API10",
             code: functionCode,
             buildpack: "boreal"
             }

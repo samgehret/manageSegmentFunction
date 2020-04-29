@@ -23,7 +23,7 @@ jobs:
         uses: ./ # Uses an action in the root directory
         with:
           token: 'Mona the Octocat'
-          function-js: console.log('hello world')
+          function-js: 'lib/function.txt'
       # Use the output from the `hello` step
 
 
