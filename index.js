@@ -16,24 +16,24 @@ try {
 
 
 
-    // const bodyParams = {
-    //         type: 'DESTINATION',
-    //         function: {
-    //         display_name: "Test API10",
-    //         code: functionCode,
-    //         buildpack: "boreal"
-    //         }
-    // }
-    // const config = {
-    //     headers: { Authorization: `Bearer DDeaRf5arluteOr1u9deUu8KcqkcBD621Q1tQb-VX4s.J_QDecOc1ZE7FbCHhoSR2MAvOtPTZRb9uuSR60yZkTU` }
-    // };
-    // axios.post('https://platform.segmentapis.com/v1beta/workspaces/mOcpeJK5n7/functions',
-    //     bodyParams,
-    //     config)
-    //     .then(function (response) {
-    //         // console.log(response.data)
-    //         console.log('getting here')
-    //     })
+    const bodyParams = {
+            type: 'DESTINATION',
+            function: {
+            display_name: "Test API11",
+            code: functionCode,
+            buildpack: "boreal"
+            }
+    }
+    const config = {
+        headers: { Authorization: `Bearer DDeaRf5arluteOr1u9deUu8KcqkcBD621Q1tQb-VX4s.J_QDecOc1ZE7FbCHhoSR2MAvOtPTZRb9uuSR60yZkTU` }
+    };
+    axios.post('https://platform.segmentapis.com/v1beta/workspaces/mOcpeJK5n7/functions',
+        bodyParams,
+        config)
+        .then(function (response) {
+            // console.log(response.data)
+            console.log('getting here')
+        })
 
 } catch (error) {
     core.setFailed(error.message);
