@@ -15,7 +15,7 @@ jobs:
           cp lib/function.js lib/function.txt
           value=`cat lib/function.txt`
           echo $value
-          set-output name={function-test}::{$value}
+          echo "::set-output name=function-test::$value"
       # - name: Archive Function Code
       #   uses: actions/upload-artifact@v1
       #   with:
