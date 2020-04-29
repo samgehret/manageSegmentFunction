@@ -14,16 +14,16 @@ jobs:
           cp lib/function.js lib/function.txt
           value=`cat lib/function.txt`
           echo $value
-      - name: Archive Function Code
-        uses: actions/upload-artifact@v1
-        with:
-          name: function
-          path: lib/function.txt
+      # - name: Archive Function Code
+      #   uses: actions/upload-artifact@v1
+      #   with:
+      #     name: function
+      #     path: lib/function.txt
       - name: Sending Function to Segment
         uses: ./ # Uses an action in the root directory
         with:
           token: 'Mona the Octocat'
-          function-js: lib/function.txt
+          function-js: console.log('hello world')
       # Use the output from the `hello` step
 
 
