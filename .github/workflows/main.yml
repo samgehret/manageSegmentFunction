@@ -24,7 +24,7 @@ jobs:
         uses: ./ # Uses an action in the root directory
         with:
           token: 'Mona the Octocat'
-          function-js: ${{ lib/functions.txt }}
+          function-js: ${{ function_test }}
       # Use the output from the `hello` step
 
 
