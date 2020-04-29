@@ -21,6 +21,8 @@ jobs:
       #   with:
       #     name: function
       #     path: lib/function.txt
+      - name: Get the output time
+        run: echo "The meow meow new2 time was ${{ steps.checkout.output.function-test }}"
       - name: Sending Function to Segment
         uses: ./ # Uses an action in the root directory
         with:
