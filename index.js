@@ -3,27 +3,29 @@ const github = require('@actions/github');
 const axios = require('axios')
 
 try {
-    // `who-to-greet` input defined in action metadata file
-    const nameToGreet = core.getInput('token');
-    const functionCode = core.getInput('function-js')
+
+// TO WRITE LOGIC FOR FIGURING OUT IF A FUNCTION EXISTS OR NOT
+
+
+
+    const functionCode = core.getInput('function-code')
+    const functionName = core.getInput('function-name')
     console.log('the function code is', functionCode)
-    console.log(`Hello ${nameToGreet}!`);
-    const time = (new Date()).toTimeString();
-    core.setOutput("time", time);
-    // Get the JSON webhook payload for the event that triggered the workflow
-    //   const payload = JSON.stringify(github.context.payload, undefined, 2)
-    //   console.log(`The event meow payload: ${payload}`);
-
-
 
     const bodyParams = {
             type: 'DESTINATION',
             function: {
-            display_name: "Test API13",
+            display_name: functionName,
             code: functionCode,
             buildpack: "boreal"
             }
     }
+
+    // TO FILL OUT FOR PATCH / UPDATE
+    // const patchBodyParams = {
+    //     update_mask
+    // }
+
     const config = {
         headers: { Authorization: `Bearer e4wpiMxQjZnNxO-rhTj3n5lhrHzGGadoJP_3QqNR0qY.VnW0iDTC_e73DGZX1i31pHF0Xarsx2mBf6KLMyjd-Ms` }
     };
@@ -32,7 +34,7 @@ try {
         config)
         .then(function (response) {
             // console.log(response.data)
-            console.log('getting here')
+            console.log('Function Created Successfully')
         })
 
 } catch (error) {
