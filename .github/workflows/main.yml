@@ -7,7 +7,6 @@ jobs:
     steps:
       # To use this repository's private action, you must check out the repository
       - name: Checkout Function
-        id: checkout
         uses: actions/checkout@v2
       - shell: bash
         run: |
@@ -16,6 +15,7 @@ jobs:
           value=`cat lib/function.txt`
           echo $value
           echo "::set-output name=action_fruit::strawberry"
+        id: checkout
       # - name: Archive Function Code
       #   uses: actions/upload-artifact@v1
       #   with:
