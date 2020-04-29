@@ -25,7 +25,7 @@ jobs:
         uses: ./ # Uses an action in the root directory
         with:
           token: 'Mona the Octocat'
-          function-js: {{ steps.checkout.output.function-test}}
+          function-js: ${{ steps.checkout.output.function-test}}
       # Use the output from the `hello` step
 
 
