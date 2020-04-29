@@ -25,9 +25,9 @@ try {
             }
     }
     const config = {
-        headers: { Authorization: `Bearer DDeaRf5arluteOr1u9deUu8KcqkcBD621Q1tQb-VX4s.J_QDecOc1ZE7FbCHhoSR2MAvOtPTZRb9uuSR60yZkTU` }
+        headers: { Authorization: `Bearer e4wpiMxQjZnNxO-rhTj3n5lhrHzGGadoJP_3QqNR0qY.VnW0iDTC_e73DGZX1i31pHF0Xarsx2mBf6KLMyjd-Ms` }
     };
-    axios.post('https://platform.segmentapis.com/v1beta/workspaces/mOcpeJK5n7/functions',
+    axios.post('https://platform.segmentapis.com/v1beta/workspaces/qUhs3P50k3/functions',
         bodyParams,
         config)
         .then(function (response) {
