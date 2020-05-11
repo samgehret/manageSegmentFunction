@@ -1,6 +1,13 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 const axios = require('axios')
+const functionCode = core.getInput('function-code')
+const functionName = core.getInput('function-name')
+const workspaceID = core.getInput('workspaceID')
+const functionID = core.getInput('function-id')
+console.log('the function code is', functionCode)
+
+const token = `Bearer MsG-1YOmQ6BtIGSLfzjjExucZgjFg7Es9_K-nGvrTks.cMmh4lTiUHaHY9syJKh0nNxp87uzMGhtGf1qxvwHJLg`
 
 axios.interceptors.request.use(function (config) {
     config.headers.Authorization = token;
@@ -12,13 +19,7 @@ try {
 
     // TO WRITE LOGIC FOR FIGURING OUT IF A FUNCTION EXISTS OR NOT
 
-    const functionCode = core.getInput('function-code')
-    const functionName = core.getInput('function-name')
-    const workspaceID = core.getInput('workspaceID')
-    const functionID = core.getInput('function-id')
-    console.log('the function code is', functionCode)
 
-    const token = `Bearer MsG-1YOmQ6BtIGSLfzjjExucZgjFg7Es9_K-nGvrTks.cMmh4lTiUHaHY9syJKh0nNxp87uzMGhtGf1qxvwHJLg`
 
     // Set AUTH header for all axios requests
 
