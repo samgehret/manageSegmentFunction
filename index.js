@@ -23,11 +23,6 @@ try {
 
     // Set AUTH header for all axios requests
 
-
-    const listBodyParams = {
-        type: 'DESTINATION'
-    }
-
     const createBodyParams = {
         type: 'DESTINATION',
         function: {
@@ -50,7 +45,15 @@ try {
                 functionsList.forEach(functionReturned => {
                     if (functionReturned.id == functionID) {
                         console.log('function exists, update')
-                        updateFunction()
+                        const patchBodyParams = {
+                            update_mask: ["function.code"],
+                            function: {
+                                id: functionReturned.id,
+                                workspace_id: workspaceID,
+                                code: functionCode
+                            }
+                        }
+                        updateFunction(workspaceID, patchBodyParams)
                     }
                 })
             }
@@ -60,33 +63,21 @@ try {
             }
 
         })
-
-
-
-
-    // TO FILL OUT FOR PATCH / UPDATE
-    // const patchBodyParams = {
-    //     update_mask
-    // }
-
-
-
-
 } catch (error) {
     core.setFailed(error.message);
 }
 
-function updateFunction() {
+function updateFunction(workspaceIDInput, patchParamsInput) {
+    axios.patch(`https://platform.segmentapis.com/v1beta/workspaces/${workspaceIDInput}/functions`,
+    patchParamsInput)
     console.log('calling updating function')
 }
 
 function createFunction(workspaceIDInput, createBodyParamsInput) {
     console.log('calling creating function')
-
     axios.post(`https://platform.segmentapis.com/v1beta/workspaces/${workspaceIDInput}/functions`,
     createBodyParamsInput)
         .then(function (response) {
-            console.log(response)
             console.log('Function Created Successfully')
         })
 }
