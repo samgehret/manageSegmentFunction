@@ -17,8 +17,12 @@ try {
         headers: { Authorization: `Bearer MsG-1YOmQ6BtIGSLfzjjExucZgjFg7Es9_K-nGvrTks.cMmh4lTiUHaHY9syJKh0nNxp87uzMGhtGf1qxvwHJLg` }
     };
     
+    const listBodyParams = {
+        type: "DESTINATION"
+        }
     
     axios.get(`https://platform.segmentapis.com/v1beta/workspaces/${workspaceID}/functions`,
+        listBodyParams,
         config)
             .then(function (response) {
                 console.log(response.data)
