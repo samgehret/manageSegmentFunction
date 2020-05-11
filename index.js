@@ -25,8 +25,11 @@ try {
         type: 'DESTINATION'
     }
 
-    axios.get(`https://platform.segmentapis.com/v1beta/workspaces/${workspaceID}/functions`,
-        listBodyParams)
+    axios.get(`https://platform.segmentapis.com/v1beta/workspaces/${workspaceID}/functions`, {
+        params: {
+            type: 'DESTINATION'
+        }
+    })
         .then(function (response) {
             console.log(response.data)
         })
@@ -47,12 +50,12 @@ try {
     // }
 
 
-    axios.post(`https://platform.segmentapis.com/v1beta/workspaces/${workspaceID}/functions`,
-        bodyParams)
-        .then(function (response) {
-            // console.log(response.data)
-            console.log('Function Created Successfully')
-        })
+    // axios.post(`https://platform.segmentapis.com/v1beta/workspaces/${workspaceID}/functions`,
+    //     bodyParams)
+    //     .then(function (response) {
+    //         // console.log(response.data)
+    //         console.log('Function Created Successfully')
+    //     })
 
 } catch (error) {
     core.setFailed(error.message);
