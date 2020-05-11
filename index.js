@@ -25,6 +25,15 @@ try {
         type: 'DESTINATION'
     }
 
+    const createBodyParams = {
+        type: 'DESTINATION',
+        function: {
+            display_name: functionName,
+            code: functionCode,
+            buildpack: "boreal"
+        }
+    }
+
     axios.get(`https://platform.segmentapis.com/v1beta/workspaces/${workspaceID}/functions`, {
         params: {
             type: 'DESTINATION'
@@ -41,19 +50,13 @@ try {
                 }
                 else {
                     console.log('function does not exist, create new')
+                    createFunction(createBodyParams)
                 }
             })
         })
 
 
-    const bodyParams = {
-        type: 'DESTINATION',
-        function: {
-            display_name: functionName,
-            code: functionCode,
-            buildpack: "boreal"
-        }
-    }
+
 
     // TO FILL OUT FOR PATCH / UPDATE
     // const patchBodyParams = {
@@ -61,12 +64,7 @@ try {
     // }
 
 
-    // axios.post(`https://platform.segmentapis.com/v1beta/workspaces/${workspaceID}/functions`,
-    //     bodyParams)
-    //     .then(function (response) {
-    //         // console.log(response.data)
-    //         console.log('Function Created Successfully')
-    //     })
+
 
 } catch (error) {
     core.setFailed(error.message);
@@ -74,4 +72,15 @@ try {
 
 function updateFunction() {
     console.log('calling updating function')
+}
+
+function createFunction(bodyParamsInput) {
+    console.log('calling creating function')
+
+    axios.post(`https://platform.segmentapis.com/v1beta/workspaces/${workspaceID}/functions`,
+    bodyParamsInput)
+    .then(function (response) {
+        // console.log(response.data)
+        console.log('Function Created Successfully')
+    })
 }
