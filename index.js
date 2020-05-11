@@ -14,7 +14,7 @@ try {
     console.log('the function code is', functionCode)
     
     const config = {
-        headers: { Authorization: `Bearer 03JpV5vEXYnS1lTGL6eApoLOt820dDlI1lBCkCYvlog.remIKZlBYUJvxUpGMTlM3zp28l2Ehb4VdjtoAHwIVcc` }
+        headers: { Authorization: `Bearer MsG-1YOmQ6BtIGSLfzjjExucZgjFg7Es9_K-nGvrTks.cMmh4lTiUHaHY9syJKh0nNxp87uzMGhtGf1qxvwHJLg` }
     };
     
     
@@ -40,13 +40,13 @@ try {
     // }
 
 
-    // axios.post(`https://platform.segmentapis.com/v1beta/workspaces/${workspaceID}/functions`,
-    //     bodyParams,
-    //     config)
-    //     .then(function (response) {
-    //         // console.log(response.data)
-    //         console.log('Function Created Successfully')
-    //     })
+    axios.post(`https://platform.segmentapis.com/v1beta/workspaces/${workspaceID}/functions`,
+        bodyParams,
+        config)
+        .then(function (response) {
+            // console.log(response.data)
+            console.log('Function Created Successfully')
+        })
 
 } catch (error) {
     core.setFailed(error.message);
