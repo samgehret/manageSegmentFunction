@@ -46,6 +46,7 @@ try {
             console.log(response.data.functions)
             const functionsList = response.data.functions
             if (functionID) {
+                console.log('found functionID')
                 functionsList.forEach(functionReturned => {
                     if (functionReturned.id == functionID) {
                         console.log('function exists, update')

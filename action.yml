@@ -20,7 +20,6 @@ inputs:
   function-id:
     description: #id of function
     required: false
-    default: 'nothing'
 runs:
   using: 'node12'
   main: 'index.js'
