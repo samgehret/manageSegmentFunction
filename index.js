@@ -84,14 +84,7 @@ function createFunction(workspaceIDInput, createBodyParamsInput) {
     console.log('calling creating function')
 
     axios.post(`https://platform.segmentapis.com/v1beta/workspaces/${workspaceIDInput}/functions`,
-        {
-            type: 'DESTINATION',
-            function: {
-                display_name: core.getInput('function-name'),
-                code: core.getInput('function-code'),
-                buildpack: "boreal"
-            }
-        })
+    createBodyParamsInput)
         .then(function (response) {
             console.log(response)
             console.log('Function Created Successfully')
