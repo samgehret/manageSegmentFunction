@@ -50,7 +50,7 @@ try {
                 }
                 else {
                     console.log('function does not exist, create new')
-                    createFunction(createBodyParams)
+                    createFunction(workspaceID, createBodyParams)
                 }
             })
         })
@@ -74,10 +74,10 @@ function updateFunction() {
     console.log('calling updating function')
 }
 
-function createFunction(bodyParamsInput) {
+function createFunction(workspaceIDInput, bodyParamsInput) {
     console.log('calling creating function')
 
-    axios.post(`https://platform.segmentapis.com/v1beta/workspaces/${workspaceID}/functions`,
+    axios.post(`https://platform.segmentapis.com/v1beta/workspaces/${workspaceIDInput}/functions`,
     bodyParamsInput)
     .then(function (response) {
         // console.log(response.data)
