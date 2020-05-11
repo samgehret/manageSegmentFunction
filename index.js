@@ -50,11 +50,12 @@ try {
                 if (functionID && functionReturned.id == functionID) {
                     console.log('function exists, update')
                     updateFunction()
-                    return
+                    break
                 }
                 else {
                     console.log('function does not exist, create new')
                     createFunction(workspaceID, createBodyParams)
+                    break
                 }
             })
         })
