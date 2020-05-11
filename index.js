@@ -6,8 +6,6 @@ try {
 
     // TO WRITE LOGIC FOR FIGURING OUT IF A FUNCTION EXISTS OR NOT
 
-
-
     const functionCode = core.getInput('function-code')
     const functionName = core.getInput('function-name')
     const workspaceID = core.getInput('workspaceID')
@@ -39,6 +37,7 @@ try {
                 console.log(functionReturned.id)
                 if(functionReturned.id == functionID) {
                     console.log('function exists, update')
+                    updateFunction()
                 }
                 else {
                     console.log('function does not exist, create new')
@@ -73,4 +72,6 @@ try {
     core.setFailed(error.message);
 }
 
-// test2
+function updateFunction() {
+    console.log('calling updating function')
+}
