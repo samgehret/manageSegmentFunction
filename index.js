@@ -45,7 +45,6 @@ try {
         .then(function (response) {
             console.log(response.data.functions)
             const functionsList = response.data.functions
-            console.log(functionReturned.id)
             if (functionID) {
                 functionsList.forEach(functionReturned => {
                     if (functionReturned.id == functionID) {
