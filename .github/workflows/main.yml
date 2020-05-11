@@ -22,3 +22,4 @@ jobs:
           function-code: ${{ steps.checkout.outputs.function_code }}
           function-name: 'Sam New Test Function'
           workspaceID: VtDtj9zzck
+          function-id: dfn_5eb99f2c2d633a328e850f4b

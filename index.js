@@ -11,10 +11,12 @@ try {
     const functionCode = core.getInput('function-code')
     const functionName = core.getInput('function-name')
     const workspaceID = core.getInput('workspaceID')
+    const functionID = core.getInput('function-id')
     console.log('the function code is', functionCode)
 
     const token = `Bearer MsG-1YOmQ6BtIGSLfzjjExucZgjFg7Es9_K-nGvrTks.cMmh4lTiUHaHY9syJKh0nNxp87uzMGhtGf1qxvwHJLg`
 
+    // Set AUTH header for all axios requests
     axios.interceptors.request.use(function (config) {
         config.headers.Authorization = token;
 
@@ -31,7 +33,11 @@ try {
         }
     })
         .then(function (response) {
-            console.log(response.data)
+            console.log(response.data.functions)
+            const functionsList = response.data.functions
+            functionsList.forEach(functionReturned => {
+                console.log(functionReturned.id)
+            })
         })
 
 
