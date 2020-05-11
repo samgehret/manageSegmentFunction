@@ -37,6 +37,12 @@ try {
             const functionsList = response.data.functions
             functionsList.forEach(functionReturned => {
                 console.log(functionReturned.id)
+                if(functionReturned.id == functionID) {
+                    console.log('function exists, update')
+                }
+                else {
+                    console.log('function does not exist, create new')
+                }
             })
         })
 
