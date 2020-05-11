@@ -45,19 +45,20 @@ try {
         .then(function (response) {
             console.log(response.data.functions)
             const functionsList = response.data.functions
-            functionsList.forEach(functionReturned => {
-                console.log(functionReturned.id)
-                if (functionID && functionReturned.id == functionID) {
-                    console.log('function exists, update')
-                    updateFunction()
-                    break
-                }
-                else {
-                    console.log('function does not exist, create new')
-                    createFunction(workspaceID, createBodyParams)
-                    break
-                }
-            })
+            console.log(functionReturned.id)
+            if (functionID) {
+                functionsList.forEach(functionReturned => {
+                    if (functionReturned.id == functionID) {
+                        console.log('function exists, update')
+                        updateFunction()
+                    }
+                })
+            }
+            else {
+                console.log('creating new function')
+                createFunction(workspaceID, createBodyParams)
+            }
+
         })
 
 

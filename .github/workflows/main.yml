@@ -20,6 +20,6 @@ jobs:
         with:
           token: 'Mona the Octocat'
           function-code: ${{ steps.checkout.outputs.function_code }}
-          function-name: 'Sam New6 Test Function'
+          function-name: 'Sam New7 Test Function'
           workspaceID: VtDtj9zzck
           # function-id: dfn_5eb99f2c2d633a328e850f4b
