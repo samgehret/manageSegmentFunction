@@ -48,12 +48,12 @@ try {
                         const patchBodyParams = {
                             update_mask: ["function.code"],
                             function: {
-                                id: functionReturned.id,
+                                id: functionID,
                                 workspace_id: workspaceID,
                                 code: functionCode
                             }
                         }
-                        updateFunction(workspaceID, patchBodyParams)
+                        updateFunction(workspaceID, patchBodyParams, functionID)
                     }
                 })
             }
@@ -67,8 +67,8 @@ try {
     core.setFailed(error.message);
 }
 
-function updateFunction(workspaceIDInput, patchParamsInput) {
-    axios.patch(`https://platform.segmentapis.com/v1beta/workspaces/${workspaceIDInput}/functions`,
+function updateFunction(workspaceIDInput, patchParamsInput, functionIDInput) {
+    axios.patch(`https://platform.segmentapis.com/v1beta/workspaces/${workspaceIDInput}/functions/${functionIDInput}`,
     patchParamsInput)
     console.log('calling updating function')
 }
