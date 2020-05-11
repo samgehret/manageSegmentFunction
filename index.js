@@ -74,13 +74,20 @@ function updateFunction() {
     console.log('calling updating function')
 }
 
-function createFunction(workspaceIDInput, bodyParamsInput) {
+function createFunction(workspaceIDInput, createBodyParamsInput) {
     console.log('calling creating function')
 
     axios.post(`https://platform.segmentapis.com/v1beta/workspaces/${workspaceIDInput}/functions`,
-    bodyParamsInput)
+    {
+        type: 'DESTINATION',
+        function: {
+            display_name: functionName,
+            code: functionCode,
+            buildpack: "boreal"
+        }
+    })
     .then(function (response) {
-        // console.log(response.data)
+        console.log(response)
         console.log('Function Created Successfully')
     })
 }
