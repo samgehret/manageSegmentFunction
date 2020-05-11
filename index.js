@@ -44,7 +44,7 @@ try {
             const functionsList = response.data.functions
             functionsList.forEach(functionReturned => {
                 console.log(functionReturned.id)
-                if(functionReturned.id == functionID) {
+                if(functionID && functionReturned.id == functionID) {
                     console.log('function exists, update')
                     updateFunction()
                 }
@@ -81,8 +81,8 @@ function createFunction(workspaceIDInput, createBodyParamsInput) {
     {
         type: 'DESTINATION',
         function: {
-            display_name: functionName,
-            code: functionCode,
+            display_name: core.getInput('function-name'),
+            code: core.getInput('function-code'),
             buildpack: "boreal"
         }
     })
