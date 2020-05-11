@@ -2,6 +2,12 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 const axios = require('axios')
 
+axios.interceptors.request.use(function (config) {
+    config.headers.Authorization = token;
+
+    return config;
+});
+
 try {
 
     // TO WRITE LOGIC FOR FIGURING OUT IF A FUNCTION EXISTS OR NOT
@@ -15,11 +21,7 @@ try {
     const token = `Bearer MsG-1YOmQ6BtIGSLfzjjExucZgjFg7Es9_K-nGvrTks.cMmh4lTiUHaHY9syJKh0nNxp87uzMGhtGf1qxvwHJLg`
 
     // Set AUTH header for all axios requests
-    axios.interceptors.request.use(function (config) {
-        config.headers.Authorization = token;
 
-        return config;
-    });
 
     const listBodyParams = {
         type: 'DESTINATION'
@@ -44,9 +46,10 @@ try {
             const functionsList = response.data.functions
             functionsList.forEach(functionReturned => {
                 console.log(functionReturned.id)
-                if(functionID && functionReturned.id == functionID) {
+                if (functionID && functionReturned.id == functionID) {
                     console.log('function exists, update')
                     updateFunction()
+                    return
                 }
                 else {
                     console.log('function does not exist, create new')
@@ -78,16 +81,16 @@ function createFunction(workspaceIDInput, createBodyParamsInput) {
     console.log('calling creating function')
 
     axios.post(`https://platform.segmentapis.com/v1beta/workspaces/${workspaceIDInput}/functions`,
-    {
-        type: 'DESTINATION',
-        function: {
-            display_name: core.getInput('function-name'),
-            code: core.getInput('function-code'),
-            buildpack: "boreal"
-        }
-    })
-    .then(function (response) {
-        console.log(response)
-        console.log('Function Created Successfully')
-    })
+        {
+            type: 'DESTINATION',
+            function: {
+                display_name: core.getInput('function-name'),
+                code: core.getInput('function-code'),
+                buildpack: "boreal"
+            }
+        })
+        .then(function (response) {
+            console.log(response)
+            console.log('Function Created Successfully')
+        })
 }
