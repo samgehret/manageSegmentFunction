@@ -18,7 +18,7 @@ try {
     };
     
     
-    axios.get(`https://platform.segmentapis.com//v1beta/workspaces/${workspaceID}/functions`,
+    axios.get(`https://platform.segmentapis.com/v1beta/workspaces/${workspaceID}/functions`,
         config)
             .then(function (response) {
                 console.log(response.data)
