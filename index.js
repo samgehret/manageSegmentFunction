@@ -4,7 +4,7 @@ const axios = require('axios')
 
 try {
 
-// TO WRITE LOGIC FOR FIGURING OUT IF A FUNCTION EXISTS OR NOT
+    // TO WRITE LOGIC FOR FIGURING OUT IF A FUNCTION EXISTS OR NOT
 
 
 
@@ -12,30 +12,33 @@ try {
     const functionName = core.getInput('function-name')
     const workspaceID = core.getInput('workspaceID')
     console.log('the function code is', functionCode)
-    
-    const config = {
-        headers: { Authorization: `Bearer MsG-1YOmQ6BtIGSLfzjjExucZgjFg7Es9_K-nGvrTks.cMmh4lTiUHaHY9syJKh0nNxp87uzMGhtGf1qxvwHJLg` }
-    };
-    
+
+    const token = `Bearer MsG-1YOmQ6BtIGSLfzjjExucZgjFg7Es9_K-nGvrTks.cMmh4lTiUHaHY9syJKh0nNxp87uzMGhtGf1qxvwHJLg`
+
+    axios.interceptors.request.use(function (config) {
+        config.headers.Authorization = token;
+
+        return config;
+    });
+
     const listBodyParams = {
-        type: "DESTINATION"
-        }
-    
+        type: 'DESTINATION'
+    }
+
     axios.get(`https://platform.segmentapis.com/v1beta/workspaces/${workspaceID}/functions`,
-        listBodyParams,
-        config)
-            .then(function (response) {
-                console.log(response.data)
-            })
+        listBodyParams)
+        .then(function (response) {
+            console.log(response.data)
+        })
 
 
     const bodyParams = {
-            type: 'DESTINATION',
-            function: {
+        type: 'DESTINATION',
+        function: {
             display_name: functionName,
             code: functionCode,
             buildpack: "boreal"
-            }
+        }
     }
 
     // TO FILL OUT FOR PATCH / UPDATE
@@ -45,8 +48,7 @@ try {
 
 
     axios.post(`https://platform.segmentapis.com/v1beta/workspaces/${workspaceID}/functions`,
-        bodyParams,
-        config)
+        bodyParams)
         .then(function (response) {
             // console.log(response.data)
             console.log('Function Created Successfully')
