@@ -21,3 +21,4 @@ jobs:
           token: 'Mona the Octocat'
           function-code: ${{ steps.checkout.outputs.function_code }}
           function-name: 'Ricky Test Function'
+          workspaceID: cUMIZIkR1y
