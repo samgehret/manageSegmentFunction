@@ -23,3 +23,25 @@ jobs:
           function-name: 'Sam New8 Test Function'
           workspaceID: VtDtj9zzck
           function-id: dfn_5eb9c1965253852e1ad72a51
+  job_2:
+    name: Upload Function to Segment
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout and Preparing Function
+        uses: actions/checkout@v2
+      - shell: bash
+        run: |
+          echo "Function Code Is"
+          cp lib/function2.js lib/function2.txt
+          value=`cat lib/function2.txt`
+          echo $value
+          echo "::set-output name=function_code::$value"
+        id: checkout
+      - name: Sending Function to Segment
+        uses: ./ # Uses an action in the root directory
+        with:
+          token: 'Mona the Octocat'
+          function-code: ${{ steps.checkout.outputs.function_code }}
+          function-name: 'Function 2 Test'
+          workspaceID: VtDtj9zzck
+          # function-id: dfn_5eb9c1965253852e1ad72a51
