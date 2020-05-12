@@ -11,7 +11,7 @@ inputs:
   function-code:  # id of input
     description: Expression to pass function code around in workflow yaml.
     required: false
-    default: ${{ steps.checkout.outputs.function_code }}
+    default: "${{ steps.checkout.outputs.function_code }}"
   function-name:  # id of input
     description: 'Function Name'
     required: true
