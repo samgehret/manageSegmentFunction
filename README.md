@@ -7,3 +7,14 @@ The purpose of this repo is to provide a workflow which uses Github Actions to m
 - Leverage function version control from Git and Github.
 - Use git commit history to revert functions to previous versions.
 - Integrate function code with automated testing currently leveraged in your SDLC.
+
+
+## Components
+
+### acion.yml
+
+### index.js
+
+### main.yml
+
+### function javascript code

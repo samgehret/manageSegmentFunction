@@ -6,10 +6,6 @@ const functionName = core.getInput('function-name')
 const workspaceID = core.getInput('workspaceID')
 const functionID = core.getInput('function-id')
 const token = core.getInput('token')
-console.log('the function code is', functionCode)
-
-// Need to figure out how to abstract this token out of this repo and into some kind of environment variable.
-// const token = `Bearer MsG-1YOmQ6BtIGSLfzjjExucZgjFg7Es9_K-nGvrTks.cMmh4lTiUHaHY9syJKh0nNxp87uzMGhtGf1qxvwHJLg`
 
 // Appends the Auth Header to all Axios requests.
 axios.interceptors.request.use(function (config) {
