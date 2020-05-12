@@ -17,10 +17,10 @@ jobs:
           echo "::set-output name=function_code::$value"
         id: checkout
       - name: Sending Function to Segment
-        uses: ./ # Uses an action in the root directory
+        uses: ./ # Uses an action in the root directory will need to be updated once this is on the Actions Marketplace.
         with:
           token: 'MsG-1YOmQ6BtIGSLfzjjExucZgjFg7Es9_K-nGvrTks.cMmh4lTiUHaHY9syJKh0nNxp87uzMGhtGf1qxvwHJLg'
-          function-code: ${{ steps.checkout.outputs.function_code }}
+          # function-code: ${{ steps.checkout.outputs.function_code }}
           function-name: 'Sam New8 Test Function'
           workspaceID: VtDtj9zzck
           function-id: dfn_5eb9c1965253852e1ad72a51

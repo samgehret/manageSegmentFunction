@@ -11,9 +11,22 @@ The purpose of this repo is to provide a workflow which uses Github Actions to m
 
 ## Components
 
-### acion.yml
+### action.yml
+
+#### Inputs
+- `token`
+**Required** The auhtorization token generated in Segment.
+- `workspaceID`
+**Required** The id of your workspace (found in workspace settings)
+- `function-code`
+**Required** Do not change this. This reads your function code.
+- `function-name`
+**Required** The display name of your function inside the Segment UI
+- `function-id`
+The id of your Segment function (assigned after it is created). You need to add this after the function is created.
 
 ### index.js
+Houses the source code for interacting with the Segment platform. No need to edit this unless you have a bespoke use case.
 
 ### main.yml
 

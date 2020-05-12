@@ -9,9 +9,9 @@ inputs:
     required: true
     default: 'None'
   function-code:  # id of input
-    description: 'Function Code'
-    required: true
-    default: 'No Code Read'
+    description: Expression to pass function code around in workflow yaml.
+    required: false
+    default: ${{ steps.checkout.outputs.function_code }}
   function-name:  # id of input
     description: 'Function Name'
     required: true
