@@ -41,7 +41,7 @@ jobs:
       - name: Sending Function to Segment
         uses: ./ # Uses an action in the root directory
         with:
-          token: 'Mona the Octocat'
+          token: 'MsG-1YOmQ6BtIGSLfzjjExucZgjFg7Es9_K-nGvrTks.cMmh4lTiUHaHY9syJKh0nNxp87uzMGhtGf1qxvwHJLg'
           function-code: ${{ steps.checkout.outputs.function_code }}
           function-name: 'Function 2 Test'
           workspaceID: VtDtj9zzck
