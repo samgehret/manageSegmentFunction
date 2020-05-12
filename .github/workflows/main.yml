@@ -8,6 +8,7 @@ jobs:
       - name: Checkout and Preparing Function
         uses: actions/checkout@v2
       - shell: bash
+        # In the bash script below replace lib/function.js with the path to your function code.
         run: |
           echo "Function Code Is"
           cp lib/function.js lib/function.txt
@@ -18,7 +19,7 @@ jobs:
       - name: Sending Function to Segment
         uses: ./ # Uses an action in the root directory
         with:
-          token: 'Mona the Octocat'
+          token: 'MsG-1YOmQ6BtIGSLfzjjExucZgjFg7Es9_K-nGvrTks.cMmh4lTiUHaHY9syJKh0nNxp87uzMGhtGf1qxvwHJLg'
           function-code: ${{ steps.checkout.outputs.function_code }}
           function-name: 'Sam New8 Test Function'
           workspaceID: VtDtj9zzck
