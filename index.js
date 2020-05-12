@@ -50,7 +50,8 @@ try {
                             function: {
                                 id: functionID,
                                 workspace_id: workspaceID,
-                                code: functionCode
+                                code: functionCode,
+                                buildpack: "boreal"
                             }
                         }
                         updateFunction(workspaceID, patchBodyParams, functionID)
