@@ -46,7 +46,7 @@ try {
                     if (functionReturned.id == functionID) {
                         console.log('function exists, update')
                         const patchBodyParams = {
-                            update_mask: ["function.code"],
+                            update_mask: "function.code",
                             function: {
                                 id: functionID,
                                 workspace_id: workspaceID,
