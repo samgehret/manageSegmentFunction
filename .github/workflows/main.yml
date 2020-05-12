@@ -44,4 +44,4 @@ jobs:
           function-code: ${{ steps.checkout.outputs.function_code }}
           function-name: 'Function 2 Test'
           workspaceID: VtDtj9zzck
-          # function-id: dfn_5eb9c1965253852e1ad72a51
+          function-id: dfn_5ebaf87e735a3463b0f91b56
