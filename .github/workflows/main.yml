@@ -2,7 +2,7 @@ on: [push]
 # You will need to create a separate job for each function you want to manage.
 jobs:
   job_1:
-    name: Upload Function to Segment
+    name: Create / Update Function 1 to Segment
     runs-on: ubuntu-latest
     steps:
       - name: Checkout and Preparing Function
@@ -25,7 +25,7 @@ jobs:
           workspaceID: VtDtj9zzck
           function-id: dfn_5eb9c1965253852e1ad72a51
   job_2:
-    name: Upload Function to Segment
+    name: Create / Update Function 2 to Segment
     runs-on: ubuntu-latest
     steps:
       - name: Checkout and Preparing Function

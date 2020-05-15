@@ -1,4 +1,4 @@
-name: 'Hello World'
+name: 'Manage Segment Function'
 description: 'Greet someone and record the time'
 inputs:
   token:  # id of input
