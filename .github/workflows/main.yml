@@ -19,30 +19,33 @@ jobs:
       - name: Sending Function to Segment
         uses: ./ # Uses an action in the root directory will need to be updated once this is on the Actions Marketplace.
         with:
-          token: 'MsG-1YOmQ6BtIGSLfzjjExucZgjFg7Es9_K-nGvrTks.cMmh4lTiUHaHY9syJKh0nNxp87uzMGhtGf1qxvwHJLg'
+          token: '< your segment token >'
           function-code: ${{ steps.checkout.outputs.function_code }}
-          function-name: 'Sam New8 Test Function'
-          workspaceID: VtDtj9zzck
-          function-id: dfn_5eb9c1965253852e1ad72a51
-  job_2:
-    name: Create / Update Function 2 to Segment
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout and Preparing Function
-        uses: actions/checkout@v2
-      - shell: bash
-        run: |
-          echo "Function Code Is"
-          cp lib/function2.js lib/function2.txt
-          value=`cat lib/function2.txt`
-          echo $value
-          echo "::set-output name=function_code::$value"
-        id: checkout
-      - name: Sending Function to Segment
-        uses: ./ # Uses an action in the root directory
-        with:
-          token: 'MsG-1YOmQ6BtIGSLfzjjExucZgjFg7Es9_K-nGvrTks.cMmh4lTiUHaHY9syJKh0nNxp87uzMGhtGf1qxvwHJLg'
-          function-code: ${{ steps.checkout.outputs.function_code }}
-          function-name: 'Function 2 Test'
-          workspaceID: VtDtj9zzck
-          function-id: dfn_5ebaf87e735a3463b0f91b56
+          function-name: 'Function 1 Name'
+          workspaceID: <Workspace ID>
+          # function-id: dfn_5eb9c1965253852e1ad72a51
+
+# Uncomment job_2 below if you want to manage another function
+
+  # job_2:
+  #   name: Create / Update Function 2 to Segment
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout and Preparing Function
+  #       uses: actions/checkout@v2
+  #     - shell: bash
+  #       run: |
+  #         echo "Function Code Is"
+  #         cp lib/function2.js lib/function2.txt
+  #         value=`cat lib/function2.txt`
+  #         echo $value
+  #         echo "::set-output name=function_code::$value"
+  #       id: checkout
+  #     - name: Sending Function to Segment
+  #       uses: ./ # Uses an action in the root directory
+  #       with:
+  #         token: '< your segment token >'
+  #         function-code: ${{ steps.checkout.outputs.function_code }}
+  #         function-name: 'Function 2 Name'
+  #         workspaceID: VtDtj9zzck
+  #         function-id: dfn_5ebaf87e735a3463b0f91b56
