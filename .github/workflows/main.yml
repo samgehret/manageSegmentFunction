@@ -1,5 +1,5 @@
 on: [push]
-
+# You will need to create a separate job for each function you want to manage.
 jobs:
   job_1:
     name: Upload Function to Segment
