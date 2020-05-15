@@ -12,7 +12,10 @@ jobs:
         run: |
           echo "Function Code Is"
           cp lib/function.js lib/function.txt
-          value=`cat lib/function.txt`
+          value="$(< lib/function.txt)"
+          value="${value//'%'/'%25'}"
+          value="${value//$'\n'/'%0A'}"
+          value="${value//$'\r'/'%0D'}"
           echo $value
           echo "::set-output name=function_code::$value"
         id: checkout
