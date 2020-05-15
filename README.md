@@ -30,7 +30,7 @@ The goal is to submit this action to the [Github Action Marketplace](https://git
 - `token`
 **Required** The auhtorization token generated in Segment.
 - `workspaceID`
-**Required** The id of your workspace (found in workspace settings)
+**Required** The auto generated id of your workspace (found in workspace settings). This is NOT the workspace slug.
 - `function-code`
 **Required** Do not change this. This reads your function code.
 - `function-name`
