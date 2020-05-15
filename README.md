@@ -1,5 +1,7 @@
 # Manage Segment Functions
 
+Note: This only workflow only supports destination functions at the moment. Support for source functions to come soon.
+
 ## Overview
 The purpose of this repo is to provide a workflow which uses [Github Actions](https://help.github.com/en/actions) to manage Segment Functions within your existing Software Development Lifecycle (SDLC). By leveraging this repo you can write function code in your own IDE to Create and Update functions in your Segment workspace.
 
