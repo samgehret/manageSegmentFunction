@@ -13,8 +13,8 @@ The goal is to submit this action to the [Github Action Marketplace](https://git
 
 ## Set Up
 - Create a main.yml file in your own repo, within a .github/workflows folder. So like `.github/workflows/main.yml`
-- Copy the content of the [main.yml](https://github.com/samgehret/manageSegmentFunction/blob/master/.github/workflows/main.yml) in this repo.
-- Within main.yml, configure your token, workspaceID, and function-name.
+- Copy the content of the [main.yml](https://github.com/samgehret/manageSegmentFunction/blob/master/.github/workflows/main.yml) to the main.yml in your own repo.
+- Within your main.yml, input your token, workspaceID, and function-name.
 - Make sure to update the relative path to your function within the bash script in the main.yml file.
 - When you push your function code to your master branch, it should create a function in your Segment workspace.
 - Check the "Actions" section (look for the link at the top of your repo) to check on the status of the upload.
