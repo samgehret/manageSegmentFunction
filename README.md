@@ -11,6 +11,11 @@ The goal is to submit this action to the [Github Action Marketplace](https://git
 - Integrate function code with automated testing currently leveraged in your SDLC.
 
 
+## Set Up
+- Create a main.yml file in your own repo, within a .github/workflows. So like `.github/workflows/main.yml`
+- Copy the content of the [main.yml](https://github.com/samgehret/manageSegmentFunction/blob/master/.github/workflows/main.yml) in this repo.
+
+
 ## Components
 
 ### action.yml
