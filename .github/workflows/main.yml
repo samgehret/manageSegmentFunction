@@ -20,7 +20,7 @@ jobs:
         uses: samgehret/manageSegmentFunction@v1.2 # Uses an action in the root directory will need to be updated once this is on the Actions Marketplace.
         with:
           token: '< your segment token >'
-          function-code: ${{ steps.checkout.outputs.function_code }}
+          function-code: ${{ steps.checkout.outputs.function_code }} # don't update this
           function-name: 'Function 1 Name'
           workspaceID: <Workspace ID>
           # function-id: dfn_5eb9c1965253852e1ad72a51
