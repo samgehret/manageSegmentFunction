@@ -1,7 +1,9 @@
 # Manage Segment Functions
 
 ## Overview
-The purpose of this repo is to provide a workflow which uses Github Actions to manage Segment Functions within your existing Software Development Lifecycle (SDLC). By leveraging this repo you can write function code in your own IDE to Create and Update functions in your Segment workspace.
+The purpose of this repo is to provide a workflow which uses [Github Actions](https://help.github.com/en/actions) to manage Segment Functions within your existing Software Development Lifecycle (SDLC). By leveraging this repo you can write function code in your own IDE to Create and Update functions in your Segment workspace.
+
+The goal is to submit this action to the [Github Action Marketplace](https://github.com/marketplace/category/free), so that any user can take advantage of this workflow to manage functions in their own environment.
 
 ## Key Benefits
 - Leverage function version control from Git and Github.
