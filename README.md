@@ -12,17 +12,17 @@ The goal is to submit this action to the [Github Action Marketplace](https://git
 
 
 ## Set Up
-- Create a main.yml file in your own repo, within a .github/workflows. So like `.github/workflows/main.yml`
+- Create a main.yml file in your own repo, within a .github/workflows folder. So like `.github/workflows/main.yml`
 - Copy the content of the [main.yml](https://github.com/samgehret/manageSegmentFunction/blob/master/.github/workflows/main.yml) in this repo.
 - Within main.yml, configure your token, workspaceID, and function-name.
 - Make sure to update the relative path to your function within the bash script in the main.yml file.
 - When you push your function code to your master branch, it should create a function in your Segment workspace.
 - Check the "Actions" section (look for the link at the top of your repo) to check on the status of the upload.
+- Check your Segment workspace to see if the function was sucessfully added.
+- If added, grab the function-id and input it into main.yml to allow your function to be updated. This can be found in the URL when looking at an indvidual function `https://app.segment.com/demo-segment-workspace/functions/catalog/<FUNCTION ID HERE>/edit/code`
 
 
 ## Components
-
-### action.yml
 
 #### Inputs
 - `token`
@@ -35,10 +35,3 @@ The goal is to submit this action to the [Github Action Marketplace](https://git
 **Required** The display name of your function inside the Segment UI
 - `function-id`
 The id of your Segment function (assigned after it is created). You need to add this after the function is created.
-
-### index.js
-Houses the source code for interacting with the Segment platform. No need to edit this unless you have a bespoke use case.
-
-### main.yml
-
-### function javascript code
