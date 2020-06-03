@@ -6,6 +6,7 @@ const functionName = core.getInput('function-name')
 const workspaceID = core.getInput('workspaceID')
 const functionID = core.getInput('function-id')
 const token = core.getInput('token')
+const functionType = core.getInput('function-type').toUpperCase()
 
 // Appends the Auth Header to all Axios requests.
 axios.interceptors.request.use(function (config) {
@@ -17,7 +18,7 @@ try {
     //First returns a list of all functions in a workspace
     axios.get(`https://platform.segmentapis.com/v1beta/workspaces/${workspaceID}/functions`, {
         params: {
-            type: 'DESTINATION'
+            type: functionType
         }
     })
         .then(function (response) {
@@ -49,7 +50,7 @@ try {
                 console.log('creating new function')
                 // Puts together the body of the payload sent to Create function endpoint.
                 const createBodyParams = {
-                    type: 'DESTINATION',
+                    type: functionType,
                     function: {
                         display_name: functionName,
                         code: functionCode,

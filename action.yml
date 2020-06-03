@@ -16,6 +16,10 @@ inputs:
     description: 'Function Name'
     required: true
     default: 'Default Function Name'
+  function-type:  # id of input
+    description: 'Specify Source or Destination'
+    required: true
+    default: 'Destination'
   function-id:
     description: #id of function
     required: false
