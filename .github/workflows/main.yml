@@ -20,7 +20,7 @@ jobs:
           echo "::set-output name=function_code::$value"
         id: checkout
       - name: Sending Function to Segment
-        uses: samgehret/manageSegmentFunction@v1.2 # Uses an action in the root directory will need to be updated once this is on the Actions Marketplace.
+        uses: samgehret/manageSegmentFunction@v1.3 # Uses an action in the root directory will need to be updated once this is on the Actions Marketplace.
         with:
           token: '< your segment token >'
           function-code: ${{ steps.checkout.outputs.function_code }} # don't update this

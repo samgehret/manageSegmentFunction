@@ -1,7 +1,5 @@
 # Manage Segment Functions
 
-Note: This only workflow only supports destination functions at the moment. Support for source functions to come soon.
-
 ## Overview
 The purpose of this repo is to provide a workflow which uses [Github Actions](https://help.github.com/en/actions) to manage Segment Functions within your existing Software Development Lifecycle (SDLC). By leveraging this repo you can write function code in your own IDE to Create and Update functions in your Segment workspace.
 
@@ -14,9 +12,9 @@ The goal is to submit this action to the [Github Action Marketplace](https://git
 
 
 ## Set Up
-- Create a main.yml file in your own repo, within a .github/workflows folder. So like `.github/workflows/main.yml`
+- Create a main.yml file in your own repo where your function exists (not this repo), within a .github/workflows folder. So like `.github/workflows/main.yml`
 - Copy the content of the [main.yml](https://github.com/samgehret/manageSegmentFunction/blob/master/.github/workflows/main.yml) to the main.yml in your own repo.
-- Within your main.yml, input your token, workspaceID, and function-name.
+- Within your main.yml in your function repo, input your token, workspaceID, function-type and function-name.
 - Make sure to update the relative path to your function within the bash script in the main.yml file.
 - When you push your function code to your master branch, it should create a function in your Segment workspace.
 - Check the "Actions" section (look for the link at the top of your repo) to check on the status of the upload.
@@ -35,5 +33,7 @@ The goal is to submit this action to the [Github Action Marketplace](https://git
 **Required** Do not change this. This reads your function code.
 - `function-name`
 **Required** The display name of your function inside the Segment UI
+- `function-type`
+**Required** Specify either Source or Destination Function
 - `function-id`
 The id of your Segment function (assigned after it is created). You need to add this after the function is created.
