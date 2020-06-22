@@ -1,5 +1,5 @@
 name: 'Manage Segment Function'
-description: 'Manage your Segment functions from own development environment using Github Actions to create and update your functions.'
+description: 'Manage your Segment functions from your own development environment using Github Actions to create and update your functions.'
 branding:
   icon: arrow-up
   color: blue
