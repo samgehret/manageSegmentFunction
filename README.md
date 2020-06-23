@@ -1,5 +1,7 @@
 # Manage Segment Functions
 
+Note: this repo is not officially supported by Segment. The main contributor is a member of the Segment Solution Engineering team, Sam Gehret. He can be reached at sam.gehret@segment.com for questions, comments, and feedback. Also feel free to leave an issue in the repo :) 
+
 ## Overview
 The purpose of this repo is to provide a workflow which uses [Github Actions](https://help.github.com/en/actions) to manage Segment Functions within your existing Software Development Lifecycle (SDLC). By leveraging this repo you can write function code in your own IDE to Create and Update functions in your Segment workspace.
 
